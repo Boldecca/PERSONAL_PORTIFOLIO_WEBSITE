@@ -1,2 +1,52 @@
 # PERSONAL_PORTIFOLIO_WEBSITE
-Personal portfolio built with HTML5 and Tailwind CSS
+
+## 📌 Project Overview
+This is my personal portfolio website built with *HTML5* and *Tailwind CSS*.  
+It serves as a professional space to showcase my skills, projects, and career goals.  
+
+The portfolio is fully responsive and includes multiple sections: Home, About, Projects, and Contact.  
+
+---
+
+## 🎯 Purpose
+The purpose of this project is to:
+- Practice *semantic HTML5* structure.
+- Apply *Tailwind CSS* for styling and responsiveness.
+- Learn and apply *version control* using GitHub.
+- Build a professional portfolio for future employers and clients.
+
+---
+
+## 📂 Pages Included
+1. *Home (index.html)* – Landing page with hero section and navigation.  
+2. *About Me (about.html)* – My background, education, skills, and career goals.  
+3. *Projects (projects.html)* – Showcases 2–3 projects with descriptions.  
+4. *Contact (contact.html)* – Contact form for visitors to reach out.  
+
+---
+
+## 🖼 Screenshots
+### Homepage
+![Homepage Screenshot](![alt text](image.png))
+
+### About Page
+![About Me screenshot](![alt text](image-2.png))
+
+### Projects Page
+![Projects Screenshot](![alt text](image-1.png))
+
+### Contact Page
+![contact screenshor]{![alt text](image-3.png)}
+
+---
+
+## 🚀 Deployment
+The project can be viewed live at:  
+[GitHub Pages / Netlify / Vercel Link Here]  
+
+---
+
+## ⚙ How to Run Locally
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Boldecca/portfolio.git

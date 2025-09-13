@@ -20,7 +20,7 @@ The purpose of this project is to:
 ## 📂 Pages Included
 1. *Home (index.html)* – Landing page with hero section and navigation.  
 2. *About Me (about.html)* – My background, education, skills, and career goals.  
-3. *Projects (projects.html)* – Showcases 2–3 projects with descriptions.  
+3. *Projects (projects.html)* – Showcases 3 projects with descriptions.  
 4. *Contact (contact.html)* – Contact form for visitors to reach out.  
 
 ---

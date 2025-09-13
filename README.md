@@ -49,4 +49,4 @@ The project can be viewed live at:
 ## ⚙ How to Run Locally
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Boldecca/portfolio.git
+   git clone https://github.com/Boldecca/PERSONAL_PORTIFOLIO_WEBSITE.git

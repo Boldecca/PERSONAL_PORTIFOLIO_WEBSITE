@@ -42,7 +42,7 @@ The purpose of this project is to:
 
 ## 🚀 Deployment
 The project can be viewed live at:  
-[GitHub Pages / Netlify / Vercel Link Here]  
+https://boldecca.github.io/PERSONAL_PORTIFOLIO_WEBSITE/ 
 
 ---
 

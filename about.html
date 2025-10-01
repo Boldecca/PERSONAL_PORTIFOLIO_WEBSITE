@@ -4,65 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Rebecca</title>
-    <meta name="theme-color" content="#f0abfc">
+    <meta name="theme-color" content="#000000">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      .fade-in { animation: fadeInUp .6s ease-out both; }
+    </style>
 </head>
-<body class="font-sans text-gray-800">
+<body class="font-sans bg-gray-900 text-gray-100 transition-colors duration-300">
 
-    <header class="bg-gray-800 text-white ">
+    <header class="bg-gray-900/60 backdrop-blur text-white border-b border-gray-800 ">
         <nav class="max-w-6xl mx-auto flex justify-between items-center p-2">
            <h1 class="text-2xl font-bold tracking-tight">Rebecca</h1>
               <ul class="flex space-x-6">
-                <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
-                <li><a href="about.html" class="hover:text-blue-400">About</a></li>
-                <li><a href="project.html" class="hover:text-blue-400">Projects</a></li>
-                <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+                <li><a href="index.html" class="hover:text-pink-400">Home</a></li>
+                <li><a href="about.html" class="hover:text-pink-400">About</a></li>
+                <li><a href="project.html" class="hover:text-pink-400">Projects</a></li>
+                <li><a href="contact.html" class="hover:text-pink-400">Contact</a></li>
               </ul>
         </nav>
     </header>
 
     <section id="about" class="relative py-12">
-        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-pink-50 via-white to-purple-50"></div>
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black via-gray-900 to-slate-900"></div>
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="relative mx-auto w-64 h-64 md:w-80 md:h-80">
-                    <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-pink-200/60 via-fuchsia-200/60 to-purple-200/60 blur-2xl"></div>
-                    <img src="./TWEREE.jpg" alt="Profile Picture" class="relative w-full h-full object-cover rounded-full ring-4 ring-pink-200 shadow-xl">
+                <div class="relative mx-auto w-64 h-64 md:w-80 md:h-80 fade-in">
+                    <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-pink-500/20 via-fuchsia-500/20 to-purple-500/20 blur-2xl"></div>
+                    <img src="./TWEREE.jpg" alt="Profile Picture" class="relative w-full h-full object-cover rounded-full ring-4 ring-pink-300 shadow-xl">
                     <span class="absolute -top-2 -right-2 text-3xl">✨</span>
                     <span class="absolute -bottom-2 -left-2 text-2xl">🌸</span>
                 </div>
-                <div class="bg-white/70 backdrop-blur rounded-2xl p-6 md:p-8 shadow-lg border border-pink-100">
-                    <div class="inline-flex items-center gap-2 text-pink-600 mb-2">
+                <div class="fade-in bg-gray-800/60 backdrop-blur rounded-2xl p-6 md:p-8 shadow-lg border border-gray-700">
+                    <div class="inline-flex items-center gap-2 text-pink-400 mb-2">
                         <span class="text-xl">💖</span>
                         <span class="uppercase tracking-wide text-xs font-semibold">Nice to meet you</span>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-3">About Me</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Hi, I'm <span class="font-semibold text-pink-600">Rebecca</span> — a web developer who loves crafting
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-3">About Me</h2>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Hi, I'm <span class="font-semibold text-pink-400">Rebecca</span> — a web developer who loves crafting
                         adorable, easy-to-use interfaces. I blend clean code with playful details to make
                         experiences that feel friendly and delightful.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-gray-300 leading-relaxed mb-4">
                         When I'm not building, I'm sipping iced coffee, mood‑boarding color palettes, and
                         taking sunset walks. Always learning, always creating, always adding a little sparkle ✨.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700">HTML5</span>
-                        <span class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700">Tailwind CSS</span>
-                        <span class="px-3 py-1 rounded-full text-sm bg-fuchsia-100 text-fuchsia-700">Responsive UI</span>
-                        <span class="px-3 py-1 rounded-full text-sm bg-rose-100 text-rose-700">Accessibility</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-pink-900/40 text-pink-200 border border-pink-700">HTML5</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-purple-900/40 text-purple-200 border border-purple-700">Tailwind CSS</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-fuchsia-900/40 text-fuchsia-200 border border-fuchsia-700">Responsive UI</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-rose-900/40 text-rose-200 border border-rose-700">Accessibility</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <a href="project.html" class="inline-flex items-center justify-center rounded-lg bg-pink-600 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-pink-700 transition">See my projects</a>
-                        <a href="contact.html" class="inline-flex items-center justify-center rounded-lg bg-white text-pink-700 px-4 py-2 text-sm font-semibold shadow border border-pink-200 hover:bg-pink-50 transition">Let's be friends 💌</a>
+                        <a href="project.html" class="inline-flex items-center justify-center rounded-lg bg-pink-600 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-pink-500 transition">See my projects</a>
+                        <a href="contact.html" class="inline-flex items-center justify-center rounded-lg bg-gray-900 text-pink-300 px-4 py-2 text-sm font-semibold shadow border border-gray-700 hover:bg-gray-800 transition">Let's be friends 💌</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-white py-6 text-center">
-        <p>© 2025 Rebecca. All rights reserved.</p>
+    <footer class="bg-gray-900 text-white py-6 text-center border-t border-gray-800">
+        <p class="text-sm text-gray-400">© 2025 Rebecca. All rights reserved.</p>
     </footer>
 </body>
 </html>

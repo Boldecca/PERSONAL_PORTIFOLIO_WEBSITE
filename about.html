@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Rebecca</title>
+    <meta name="theme-color" content="#f0abfc">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-sans text-gray-600">
+<body class="font-sans text-gray-800">
 
     <header class="bg-gray-800 text-white ">
         <nav class="max-w-6xl mx-auto flex justify-between items-center p-2">
-           <h1 class="text-2x1 font-bold">Rebecca</h1>
+           <h1 class="text-2xl font-bold tracking-tight">Rebecca</h1>
               <ul class="flex space-x-6">
                 <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
                 <li><a href="about.html" class="hover:text-blue-400">About</a></li>
@@ -20,21 +21,48 @@
         </nav>
     </header>
 
-    <section id="about" class="max-w-3xl mx-auto py-6 px-4 grid md:grid-cols-2 gap-6 items-center">
-        <img src="./TWEREE.jpg" alt="Profile Picture" class="rounded-lg shadow-lg">
-        <div>
-            <h2 class="text-3x1 font-bold mb-4">About Me</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Hello! I'm Rebecca, a passionate web developer with a knack for creating beautiful and functional websites. With a background in computer science and a love for design, I strive to build user-friendly digital experiences that leave a lasting impression using HTML5 and Tailwind CSS.
-            </p>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                When I'm not coding, you can find me exploring the latest tech trends, hiking in nature, or experimenting with new recipes in the kitchen. I'm always eager to learn and take on new challenges, so feel free to reach out if you'd like to collaborate or just say hi!
-            </p>
+    <section id="about" class="relative py-12">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-pink-50 via-white to-purple-50"></div>
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="relative mx-auto w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-pink-200/60 via-fuchsia-200/60 to-purple-200/60 blur-2xl"></div>
+                    <img src="./TWEREE.jpg" alt="Profile Picture" class="relative w-full h-full object-cover rounded-full ring-4 ring-pink-200 shadow-xl">
+                    <span class="absolute -top-2 -right-2 text-3xl">✨</span>
+                    <span class="absolute -bottom-2 -left-2 text-2xl">🌸</span>
+                </div>
+                <div class="bg-white/70 backdrop-blur rounded-2xl p-6 md:p-8 shadow-lg border border-pink-100">
+                    <div class="inline-flex items-center gap-2 text-pink-600 mb-2">
+                        <span class="text-xl">💖</span>
+                        <span class="uppercase tracking-wide text-xs font-semibold">Nice to meet you</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-3">About Me</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Hi, I'm <span class="font-semibold text-pink-600">Rebecca</span> — a web developer who loves crafting
+                        adorable, easy-to-use interfaces. I blend clean code with playful details to make
+                        experiences that feel friendly and delightful.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        When I'm not building, I'm sipping iced coffee, mood‑boarding color palettes, and
+                        taking sunset walks. Always learning, always creating, always adding a little sparkle ✨.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full text-sm bg-pink-100 text-pink-700">HTML5</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-700">Tailwind CSS</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-fuchsia-100 text-fuchsia-700">Responsive UI</span>
+                        <span class="px-3 py-1 rounded-full text-sm bg-rose-100 text-rose-700">Accessibility</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a href="project.html" class="inline-flex items-center justify-center rounded-lg bg-pink-600 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-pink-700 transition">See my projects</a>
+                        <a href="contact.html" class="inline-flex items-center justify-center rounded-lg bg-white text-pink-700 px-4 py-2 text-sm font-semibold shadow border border-pink-200 hover:bg-pink-50 transition">Let's be friends 💌</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer class="bg-gray-800 text-white py-6 text-center">
         <p>© 2025 Rebecca. All rights reserved.</p>
-
+    </footer>
 </body>
 </html>

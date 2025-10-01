@@ -13,14 +13,25 @@
 <body class="font-sans bg-gray-900 text-gray-100 transition-colors duration-300">
 
     <header class="bg-gray-900/60 backdrop-blur text-white border-b border-gray-800 ">
-        <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
-           <h1 class="text-2xl font-bold">Rebecca</h1>
-              <ul class="flex space-x-6">
-                <li><a href="index.html" class="hover:text-pink-400">Home</a></li>
-                <li><a href="about.html" class="hover:text-pink-400">About</a></li>
-                <li><a href="project.html" class="hover:text-pink-400">Projects</a></li>
-                <li><a href="contact.html" class="hover:text-pink-400">Contact</a></li>
-              </ul>
+        <nav class="max-w-6xl mx-auto p-4">
+           <div class="flex items-center justify-between">
+               <h1 class="text-2xl font-bold">Rebecca</h1>
+               <button id="nav-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-700 hover:bg-gray-800" aria-label="Toggle menu" aria-expanded="false">
+                   <span class="text-xl">☰</span>
+               </button>
+               <ul id="nav-menu" class="hidden md:flex md:items-center md:space-x-6">
+                 <li class="py-2 md:py-0"><a href="index.html" class="hover:text-pink-400">Home</a></li>
+                 <li class="py-2 md:py-0"><a href="about.html" class="hover:text-pink-400">About</a></li>
+                 <li class="py-2 md:py-0"><a href="project.html" class="hover:text-pink-400">Projects</a></li>
+                 <li class="py-2 md:py-0"><a href="contact.html" class="hover:text-pink-400">Contact</a></li>
+               </ul>
+           </div>
+           <ul id="nav-menu-mobile" class="md:hidden hidden flex-col mt-3 space-y-2">
+             <li><a href="index.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Home</a></li>
+             <li><a href="about.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">About</a></li>
+             <li><a href="project.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Projects</a></li>
+             <li><a href="contact.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Contact</a></li>
+           </ul>
         </nav>
     </header>
     
@@ -48,6 +59,15 @@
     <script>
       const yearEl = document.getElementById('year');
       if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+      const toggleBtn = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('nav-menu-mobile');
+      if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden');
+          toggleBtn.setAttribute('aria-expanded', String(isHidden));
+        });
+      }
     </script>
 </body>
 </html>

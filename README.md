@@ -27,16 +27,16 @@ The purpose of this project is to:
 
 ## 🖼 Screenshots
 ### Homepage
-![Homepage Screenshot](![alt text](image.png))
+![Homepage Screenshot]![alt text](image-4.png)
 
 ### About Page
-![About Me screenshot](![alt text](image-2.png))
+![About Me screenshot]![alt text](image-5.png)
 
 ### Projects Page
-![Projects Screenshot](![alt text](image-1.png))
+![Projects Screenshot]![alt text](image-6.png)
 
 ### Contact Page
-![contact screenshor]{![alt text](image-3.png)}
+![contact screenshor]![alt text](image-7.png)
 
 ---
 

@@ -5,34 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rebecca | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      .fade-in { animation: fadeInUp .6s ease-out both; }
+    </style>
 </head>
-<body class="font-sans text-gray-900">
+<body class="font-sans bg-gray-900 text-gray-100 transition-colors duration-300">
 
-    <header class="bg-gray-800 text-white ">
+    <header class="bg-gray-900/60 backdrop-blur text-white border-b border-gray-800 ">
         <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
            <h1 class="text-2xl font-bold">Rebecca</h1>
               <ul class="flex space-x-6">
-                <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
-                <li><a href="about.html" class="hover:text-blue-400">About</a></li>
-                <li><a href="project.html" class="hover:text-blue-400">Projects</a></li>
-                <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+                <li><a href="index.html" class="hover:text-pink-400">Home</a></li>
+                <li><a href="about.html" class="hover:text-pink-400">About</a></li>
+                <li><a href="project.html" class="hover:text-pink-400">Projects</a></li>
+                <li><a href="contact.html" class="hover:text-pink-400">Contact</a></li>
               </ul>
         </nav>
     </header>
     
-    <section id="home" class="text-center py-20 bg-gray-100">
-        <div class="mb-6 flex justify-center">
+    <section id="home" class="text-center py-20 bg-gradient-to-b from-black via-gray-900 to-slate-900">
+        <div class="mb-6 flex justify-center fade-in">
             <div class="relative w-40 h-40 md:w-48 md:h-48">
-                <img src="./TWEREE.jpg" alt="Rebecca portrait" class="w-full h-full object-cover rounded-full ring-4 ring-blue-200 shadow-lg">
+                <img src="./TWEREE.jpg" alt="Rebecca portrait" class="w-full h-full object-cover rounded-full ring-4 ring-pink-300 shadow-lg">
             </div>
         </div>
-        <h2 class="text-4xl font-bold mb-4">Hello, I am Rebecca 👋</h2>
-        <p class="text-lg text-gray-700 mb-6">A passionate web developer building clean and modern websites</p>
-        <a href="project.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">View my work</a>
+        <h2 class="text-4xl font-bold mb-4 fade-in">Hello, I am Rebecca 👋</h2>
+        <p class="text-lg text-gray-300 mb-6 fade-in">A passionate web developer building clean and modern websites</p>
+        <a href="project.html" class="fade-in bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-500 transition">View my work</a>
     </section>
     
-    <footer class="bg-gray-800 text-white py-6 text-center">
-        <p class="text-sm text-gray-300">© <span id="year"></span> Rebecca — Made with <span class="text-red-400">❤</span></p>
+    <footer class="bg-gray-900 text-white py-6 text-center border-t border-gray-800">
+        <p class="text-sm text-gray-400">© <span id="year"></span> Rebecca — Made with <span class="text-pink-400">❤</span></p>
     </footer>
     <script>
       const yearEl = document.getElementById('year');

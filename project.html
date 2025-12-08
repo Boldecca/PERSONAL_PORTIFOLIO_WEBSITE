@@ -4,84 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Rebecca</title>
-    <meta name="theme-color" content="#000000">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-      .fade-in { animation: fadeInUp .6s ease-out both; }
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+      * { font-family: 'Inter', sans-serif; }
+      .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+      .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+      .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
     </style>
 </head>
-<body class="font-sans bg-gray-900 text-gray-100 transition-colors duration-300">
-
-    <header class="bg-gray-900/60 backdrop-blur text-white border-b border-gray-800 ">
-        <nav class="max-w-6xl mx-auto p-4">
-           <div class="flex items-center justify-between">
-               <h1 class="text-2xl font-bold tracking-tight">Rebecca</h1>
-               <button id="nav-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-700 hover:bg-gray-800" aria-label="Toggle menu" aria-expanded="false">
-                   <span class="text-xl">☰</span>
-               </button>
-               <ul id="nav-menu" class="hidden md:flex md:items-center md:space-x-6">
-                 <li class="py-2 md:py-0"><a href="index.html" class="hover:text-pink-400">Home</a></li>
-                 <li class="py-2 md:py-0"><a href="about.html" class="hover:text-pink-400">About</a></li>
-                 <li class="py-2 md:py-0"><a href="project.html" class="hover:text-pink-400">Projects</a></li>
-                 <li class="py-2 md:py-0"><a href="contact.html" class="hover:text-pink-400">Contact</a></li>
-               </ul>
-           </div>
-           <ul id="nav-menu-mobile" class="md:hidden hidden flex-col mt-3 space-y-2">
-             <li><a href="index.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Home</a></li>
-             <li><a href="about.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">About</a></li>
-             <li><a href="project.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Projects</a></li>
-             <li><a href="contact.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Contact</a></li>
-           </ul>
+<body class="bg-slate-950 text-gray-100">
+    <header class="glass">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Rebecca</h1>
+            <ul class="flex gap-8 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-blue-400 transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-blue-400 transition">About</a></li>
+                <li><a href="project.html" class="text-blue-400">Projects</a></li>
+                <li><a href="contact.html" class="hover:text-blue-400 transition">Contact</a></li>
+            </ul>
         </nav>
     </header>
-    
-    <section id="projects" class="bg-gradient-to-b from-black via-gray-900 to-slate-900 py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-4 text-center">My Projects</h2>
-            <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">A selection of recent work. Clean design, responsive layouts, and accessible code. Click any project to learn more.</p>
-            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <article class="fade-in group bg-gray-800/60 rounded-xl shadow-md overflow-hidden border border-gray-700 transition hover:shadow-xl">
-                    <a href="#" class="block relative">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Portfolio Website preview" class="h-48 w-full object-cover transition duration-300 group-hover:scale-105">
-                        <span class="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-pink-200 border border-gray-700 shadow">HTML • Tailwind</span>
-                    </a>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-blue-400 font-medium mb-2">Portfolio</p>
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">A selection of my recent work showcasing modern web development</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="glass rounded-xl overflow-hidden card-hover">
+                    <img src="https://images.unsplash.com/photo-1548048026-5a1a941d93d3?w=600" alt="Book Explorer" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-1">Portfolio Website</h3>
-                        <p class="text-gray-300 mb-4">Personal portfolio built with semantic HTML5 and modern Tailwind CSS utilities.</p>
-                        <div class="flex items-center gap-3">
-                            <a href="#" class="inline-flex items-center rounded-md bg-pink-600 px-3 py-2 text-sm font-medium text-white hover:bg-pink-500 transition">View Project</a>
-                            <a href="#" class="text-sm text-gray-300 hover:text-pink-400">Source code →</a>
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-600/20 text-blue-400 rounded text-xs">JavaScript</span>
+                            <span class="px-2 py-1 bg-purple-600/20 text-purple-400 rounded text-xs">API</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Book Explorer</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Interactive book discovery platform with search and detailed information display</p>
+                        <div class="flex gap-3">
+                            <a href="https://phase-one-capstone-project-six.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
+                            <a href="https://github.com/Boldecca/Phase_One_Capstone_project.git" target="_blank" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
                         </div>
                     </div>
                 </article>
-
-                <article class="fade-in group bg-gray-800/60 rounded-xl shadow-md overflow-hidden border border-gray-700 transition hover:shadow-xl">
-                    <a href="#" class="block relative">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Landing Page preview" class="h-48 w-full object-cover transition duration-300 group-hover:scale-105">
-                        <span class="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-pink-200 border border-gray-700 shadow">Responsive • UX</span>
-                    </a>
+                <article class="glass rounded-xl overflow-hidden card-hover">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600" alt="Movie Explorer" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-1">Landing Page</h3>
-                        <p class="text-gray-300 mb-4">Conversion‑focused landing page with smooth interactions and mobile‑first layout.</p>
-                        <div class="flex items-center gap-3">
-                            <a href="#" class="inline-flex items-center rounded-md bg-pink-600 px-3 py-2 text-sm font-medium text-white hover:bg-pink-500 transition">Live Demo</a>
-                            <a href="#" class="text-sm text-gray-300 hover:text-pink-400">Case study →</a>
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-600/20 text-blue-400 rounded text-xs">React</span>
+                            <span class="px-2 py-1 bg-purple-600/20 text-purple-400 rounded text-xs">API</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Movie Explorer</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Movie discovery app with search functionality and detailed movie information</p>
+                        <div class="flex gap-3">
+                            <a href="http://movie-explorer-pb5z.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
+                            <a href="https://github.com/Boldecca/Movie_explorer.git" target="_blank" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
                         </div>
                     </div>
                 </article>
-
-                <article class="fade-in group bg-gray-800/60 rounded-xl shadow-md overflow-hidden border border-gray-700 transition hover:shadow-xl">
-                    <a href="#" class="block relative">
-                        <img src="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1200&auto=format&fit=crop" alt="Contact Form preview" class="h-48 w-full object-cover transition duration-300 group-hover:scale-105">
-                        <span class="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-pink-200 border border-gray-700 shadow">Forms • Validation</span>
-                    </a>
+                <article class="glass rounded-xl overflow-hidden card-hover">
+                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=600" alt="Ecommerce" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-1">Contact Form</h3>
-                        <p class="text-gray-300 mb-4">Accessible contact form with client‑side validation and clear states.</p>
-                        <div class="flex items-center gap-3">
-                            <a href="#" class="inline-flex items-center rounded-md bg-pink-600 px-3 py-2 text-sm font-medium text-white hover:bg-pink-500 transition">Preview</a>
-                            <a href="#" class="text-sm text-gray-300 hover:text-pink-400">GitHub →</a>
+                        <div class="flex gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-600/20 text-blue-400 rounded text-xs">React</span>
+                            <span class="px-2 py-1 bg-purple-600/20 text-purple-400 rounded text-xs">Ecommerce</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Static Ecommerce</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Modern ecommerce interface with product catalog and shopping cart</p>
+                        <div class="flex gap-3">
+                            <a href="https://static-ecommerce-six.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
+                            <a href="https://github.com/Boldecca/Static-ecommerce.git" target="_blank" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -89,19 +83,10 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-6 text-center border-t border-gray-800">
-        <p class="text-sm text-gray-400">© 2025 Rebecca. All rights reserved.</p>
+    <footer class="py-8 px-6 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto text-center text-gray-400 text-sm">
+            <p>© 2025 Rebecca. All rights reserved.</p>
+        </div>
     </footer>
-    <script>
-      const toggleBtn = document.getElementById('nav-toggle');
-      const mobileMenu = document.getElementById('nav-menu-mobile');
-      if (toggleBtn && mobileMenu) {
-        toggleBtn.addEventListener('click', () => {
-          const isHidden = mobileMenu.classList.contains('hidden');
-          mobileMenu.classList.toggle('hidden');
-          toggleBtn.setAttribute('aria-expanded', String(isHidden));
-        });
-      }
-    </script>
 </body>
 </html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Rebecca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes progressBar { from { width: 0%; } to { width: var(--progress-width); } }
+      .fade-in { animation: fadeInUp 0.8s ease-out both; }
+      .progress-animate { animation: progressBar 2s ease-out 0.5s both; }
+      html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="font-sans bg-gray-900 text-gray-100 transition-colors duration-300">
+
+    <header class="bg-gray-900/60 backdrop-blur text-white border-b border-gray-800 fixed w-full top-0 z-50">
+        <nav class="max-w-6xl mx-auto p-4">
+           <div class="flex items-center justify-between">
+               <h1 class="text-2xl font-bold">Rebecca</h1>
+               <button id="nav-toggle" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-700 hover:bg-gray-800" aria-label="Toggle menu" aria-expanded="false">
+                   <span class="text-xl">☰</span>
+               </button>
+               <ul id="nav-menu" class="hidden md:flex md:items-center md:space-x-6">
+                 <li class="py-2 md:py-0"><a href="index.html" class="hover:text-pink-400">Home</a></li>
+                 <li class="py-2 md:py-0"><a href="#about" class="hover:text-pink-400">About</a></li>
+                 <li class="py-2 md:py-0"><a href="skills.html" class="hover:text-pink-400">Skills</a></li>
+                 <li class="py-2 md:py-0"><a href="#projects" class="hover:text-pink-400">Projects</a></li>
+                 <li class="py-2 md:py-0"><a href="#contact" class="hover:text-pink-400">Contact</a></li>
+               </ul>
+           </div>
+           <ul id="nav-menu-mobile" class="md:hidden hidden flex-col mt-3 space-y-2">
+             <li><a href="index.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Home</a></li>
+             <li><a href="#about" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">About</a></li>
+             <li><a href="skills.html" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Skills</a></li>
+             <li><a href="#projects" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Projects</a></li>
+             <li><a href="#contact" class="block rounded-md px-3 py-2 bg-gray-900/40 border border-gray-800 hover:bg-gray-800">Contact</a></li>
+           </ul>
+        </nav>
+    </header>
+
+    <section class="relative py-20 bg-gradient-to-b from-black via-gray-900 to-slate-900 mt-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12 fade-in">
+                <div class="inline-flex items-center gap-2 text-pink-400 mb-2">
+                    <span class="text-xl">⚡</span>
+                    <span class="uppercase tracking-wide text-xs font-semibold">What I Know</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">My Skills</h1>
+                <p class="text-gray-300 max-w-2xl mx-auto">Here's a breakdown of my technical skills and proficiency levels in various technologies I use to build amazing web experiences.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="fade-in bg-gray-800/60 backdrop-blur rounded-2xl p-6 md:p-8 shadow-lg border border-gray-700">
+                    <h2 class="text-xl font-semibold mb-6 text-pink-400">Frontend Technologies</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-300">JavaScript</span>
+                                <span class="text-pink-400 font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-orange-500 to-orange-400 h-3 rounded-full progress-animate" style="--progress-width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-300">React</span>
+                                <span class="text-pink-400 font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-cyan-500 to-cyan-400 h-3 rounded-full progress-animate" style="--progress-width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-300">Tailwind CSS</span>
+                                <span class="text-pink-400 font-semibold">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-purple-500 to-purple-400 h-3 rounded-full progress-animate" style="--progress-width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-300">TypeScript</span>
+                                <span class="text-pink-400 font-semibold">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-yellow-500 to-yellow-400 h-3 rounded-full progress-animate" style="--progress-width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fade-in bg-gray-800/60 backdrop-blur rounded-2xl p-6 md:p-8 shadow-lg border border-gray-700">
+                    <h2 class="text-xl font-semibold mb-6 text-pink-400">Tools & Frameworks</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-300">Next.js</span>
+                                <span class="text-pink-400 font-semibold">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-gray-500 to-gray-400 h-3 rounded-full progress-animate" style="--progress-width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-300">Git</span>
+                                <span class="text-pink-400 font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-indigo-500 to-indigo-400 h-3 rounded-full progress-animate" style="--progress-width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-300">Accessibility</span>
+                                <span class="text-pink-400 font-semibold">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-rose-500 to-rose-400 h-3 rounded-full progress-animate" style="--progress-width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium text-gray-300">Responsive Design</span>
+                                <span class="text-pink-400 font-semibold">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-emerald-500 to-emerald-400 h-3 rounded-full progress-animate" style="--progress-width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-6 text-center border-t border-gray-800">
+        <p class="text-sm text-gray-400">© <span id="year"></span> Rebecca — Made with <span class="text-pink-400">❤</span></p>
+    </footer>
+
+    <script>
+      // Set current year
+      const yearEl = document.getElementById('year');
+      if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+      
+      // Mobile menu toggle
+      const toggleBtn = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('nav-menu-mobile');
+      if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden');
+          toggleBtn.setAttribute('aria-expanded', String(isHidden));
+        });
+      }
+
+      // Close mobile menu when clicking on links
+      document.querySelectorAll('#nav-menu-mobile a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    </script>
+</body>
+</html>

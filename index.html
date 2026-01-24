@@ -262,8 +262,8 @@
                         </div>
                         <p class="text-gray-400 mb-4 text-sm">Interactive book discovery platform with search and detailed information display</p>
                         <div class="flex gap-3">
-                            <a href="https://phase-one-capstone-project-six.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
-                            <a href="https://github.com/Boldecca/Phase_One_Capstone_project.git" target="_blank" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
+                            <a href="https://phase-one-capstone-project-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
+                            <a href="https://github.com/Boldecca/Phase_One_Capstone_project.git" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -283,8 +283,8 @@
                         </div>
                         <p class="text-gray-400 mb-4 text-sm">Movie discovery app with search functionality and detailed movie information</p>
                         <div class="flex gap-3">
-                            <a href="http://movie-explorer-pb5z.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
-                            <a href="https://github.com/Boldecca/Movie_explorer.git" target="_blank" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
+                            <a href="https://movie-explorer-pb5z.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
+                            <a href="https://github.com/Boldecca/Movie_explorer.git" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -304,8 +304,8 @@
                         </div>
                         <p class="text-gray-400 mb-4 text-sm">Modern ecommerce interface with product catalog and shopping cart</p>
                         <div class="flex gap-3">
-                            <a href="https://static-ecommerce-six.vercel.app/" target="_blank" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
-                            <a href="https://github.com/Boldecca/Static-ecommerce.git" target="_blank" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
+                            <a href="https://static-ecommerce-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Live Demo →</a>
+                            <a href="https://github.com/Boldecca/Static-ecommerce.git" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 text-sm">GitHub</a>
                         </div>
                     </div>
                 </article>
@@ -396,6 +396,18 @@
       document.getElementById('nav-toggle').addEventListener('click', () => {
         document.getElementById('mobile-menu').classList.toggle('hidden');
       });
+      
+      // Force project links to work
+      document.addEventListener('DOMContentLoaded', function() {
+        const projectLinks = document.querySelectorAll('a[href*="vercel.app"], a[href*="github.com"]');
+        projectLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(this.href, '_blank');
+          });
+        });
+      });
+      
       const form = document.querySelector('form');
       form.addEventListener('submit', async (e) => {
         e.preventDefault();

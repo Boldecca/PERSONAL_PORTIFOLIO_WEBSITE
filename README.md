@@ -23,20 +23,7 @@ The purpose of this project is to:
 3. *Projects (projects.html)* – Showcases 3 projects with descriptions.  
 4. *Contact (contact.html)* – Contact form for visitors to reach out.  
 
----
 
-## 🖼 Screenshots
-### Homepage
-![Homepage Screenshot]![alt text](image-4.png)
-
-### About Page
-![About Me screenshot]![alt text](image-5.png)
-
-### Projects Page
-![Projects Screenshot]![alt text](image-6.png)
-
-### Contact Page
-![contact screenshor]![alt text](image-7.png)
 
 ---
 

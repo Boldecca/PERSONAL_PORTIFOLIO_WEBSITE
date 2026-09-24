@@ -44,18 +44,42 @@
       @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
       @keyframes glow-pulse { 0%,100%{box-shadow:0 0 30px rgba(59,130,246,0.3),0 0 60px rgba(139,92,246,0.15)} 50%{box-shadow:0 0 60px rgba(59,130,246,0.5),0 0 100px rgba(139,92,246,0.3)} }
       @keyframes gradient-shift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-      @keyframes typing { from{width:0} to{width:100%} }
       @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-      @keyframes fade-up { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
-      @keyframes fade-left { from{opacity:0;transform:translateX(-40px)} to{opacity:1;transform:translateX(0)} }
-      @keyframes fade-right { from{opacity:0;transform:translateX(40px)} to{opacity:1;transform:translateX(0)} }
-      @keyframes scale-up { from{opacity:0;transform:scale(0.8)} to{opacity:1;transform:scale(1)} }
       @keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-      @keyframes progress { from{width:0} to{width:var(--w)} }
-      @keyframes counter { from{opacity:0} to{opacity:1} }
+      @keyframes spin-slow-rev { from{transform:rotate(360deg)} to{transform:rotate(0deg)} }
+      @keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+      @keyframes particle-float { 0%,100%{transform:translateY(0) translateX(0);opacity:0.4} 33%{transform:translateY(-30px) translateX(10px);opacity:1} 66%{transform:translateY(-15px) translateX(-10px);opacity:0.7} }
+      @keyframes orb-move { 0%,100%{transform:translate(0,0)} 33%{transform:translate(40px,-30px)} 66%{transform:translate(-20px,20px)} }
+      @keyframes count-up { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+      @keyframes border-glow { 0%,100%{border-color:rgba(59,130,246,0.3)} 50%{border-color:rgba(139,92,246,0.6)} }
+      @keyframes slide-in-badge { from{opacity:0;transform:translateX(20px) scale(0.8)} to{opacity:1;transform:translateX(0) scale(1)} }
 
       .float { animation: float 5s ease-in-out infinite; }
       .glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+      .orb-1 { animation: orb-move 15s ease-in-out infinite; }
+      .orb-2 { animation: orb-move 20s ease-in-out infinite reverse; }
+      .orb-3 { animation: orb-move 12s ease-in-out infinite 5s; }
+
+      /* Particle dots */
+      .particle { position:fixed; border-radius:50%; pointer-events:none; z-index:0; animation: particle-float linear infinite; }
+
+      /* Shimmer text */
+      .shimmer-text {
+        background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 25%, #f472b6 50%, #a78bfa 75%, #60a5fa 100%);
+        background-size: 200% auto;
+        animation: shimmer 4s linear infinite;
+        -webkit-background-clip: text; background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Floating badge animation */
+      .float-badge-1 { animation: float 4s ease-in-out infinite; }
+      .float-badge-2 { animation: float 5s ease-in-out infinite 0.5s; }
+      .float-badge-3 { animation: float 4.5s ease-in-out infinite 1s; }
+
+      /* Spin rings */
+      .spin-ring-outer { position:absolute; inset:-12px; border-radius:50%; border:1px dashed rgba(99,102,241,0.2); animation:spin-slow 25s linear infinite; }
+      .spin-ring-inner { position:absolute; inset:-4px; border-radius:50%; border:2px dashed rgba(99,102,241,0.35); animation:spin-slow-rev 15s linear infinite; }
 
       .gradient-text {
         background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
@@ -65,64 +89,78 @@
         -webkit-text-fill-color: transparent;
       }
 
-      /* Reveal on scroll */
-      .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      /* Reveal on scroll — staggered */
+      .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
       .reveal.visible { opacity: 1; transform: translateY(0); }
-      .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
       .reveal-left.visible { opacity: 1; transform: translateX(0); }
-      .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+      .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
       .reveal-right.visible { opacity: 1; transform: translateX(0); }
+      .reveal-scale { opacity: 0; transform: scale(0.85); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+      .reveal-scale.visible { opacity: 1; transform: scale(1); }
+      [data-delay="1"] { transition-delay: 0.1s; }
+      [data-delay="2"] { transition-delay: 0.2s; }
+      [data-delay="3"] { transition-delay: 0.3s; }
+      [data-delay="4"] { transition-delay: 0.4s; }
+      [data-delay="5"] { transition-delay: 0.5s; }
 
       /* Buttons */
       .btn-primary {
         background: linear-gradient(135deg, #3b82f6, #8b5cf6);
         position: relative; overflow: hidden;
         box-shadow: 0 0 30px rgba(59,130,246,0.3);
-        transition: all 0.3s;
+        transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
       }
       .btn-primary::before {
         content: ''; position: absolute;
         top: 0; left: -100%; width: 100%; height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-        transition: left 0.5s;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+        transition: left 0.6s;
       }
       .btn-primary:hover::before { left: 100%; }
-      .btn-primary:hover { box-shadow: 0 0 50px rgba(59,130,246,0.5); transform: translateY(-2px); }
+      .btn-primary:hover { box-shadow: 0 0 60px rgba(59,130,246,0.6), 0 10px 40px rgba(139,92,246,0.3); transform: translateY(-3px) scale(1.02); }
+      .btn-primary:active { transform: translateY(-1px) scale(0.99); }
 
       .btn-outline {
         border: 1px solid rgba(99,102,241,0.5);
-        background: transparent;
-        transition: all 0.3s;
+        background: transparent; position: relative; overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
       }
-      .btn-outline:hover { border-color: #6366f1; background: rgba(99,102,241,0.1); transform: translateY(-2px); box-shadow: 0 0 20px rgba(99,102,241,0.2); }
+      .btn-outline::before {
+        content:''; position:absolute; inset:0;
+        background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.15));
+        opacity:0; transition: opacity 0.3s;
+      }
+      .btn-outline:hover::before { opacity:1; }
+      .btn-outline:hover { border-color: #818cf8; transform: translateY(-3px); box-shadow: 0 0 30px rgba(99,102,241,0.25); }
 
       /* Cards */
-      .project-card { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden; }
+      .project-card { transition: all 0.5s cubic-bezier(0.16,1,0.3,1); position: relative; overflow: hidden; }
       .project-card::before {
         content: ''; position: absolute; inset: 0;
-        background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1));
-        opacity: 0; transition: opacity 0.4s; border-radius: inherit;
+        background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08));
+        opacity: 0; transition: opacity 0.5s; border-radius: inherit;
         pointer-events: none;
       }
+      .project-card::after {
+        content:''; position:absolute; top:0; left:0; right:0; height:1px;
+        background: linear-gradient(90deg, transparent, rgba(99,102,241,0.6), transparent);
+        transform: scaleX(0); transition: transform 0.5s; transform-origin: left;
+      }
       .project-card:hover::before { opacity: 1; }
-      .project-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 60px rgba(59,130,246,0.15); border-color: rgba(59,130,246,0.3) !important; }
+      .project-card:hover::after { transform: scaleX(1); }
+      .project-card:hover { transform: translateY(-12px); box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 80px rgba(59,130,246,0.12); border-color: rgba(99,102,241,0.3) !important; }
 
-      .skill-card { transition: all 0.3s; }
-      .skill-card:hover { transform: translateY(-5px); border-color: rgba(99,102,241,0.4) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+      .skill-card { transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }
+      .skill-card:hover { transform: translateY(-6px); border-color: rgba(99,102,241,0.5) !important; box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px rgba(99,102,241,0.1); }
 
       /* Progress bars */
-      .progress-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden; }
-      .progress-fill { height: 100%; border-radius: 999px; width: 0; transition: width 1.5s cubic-bezier(0.4,0,0.2,1); }
+      .progress-bar { height: 6px; background: rgba(255,255,255,0.06); border-radius: 999px; overflow: hidden; position: relative; }
+      .progress-bar::after { content:''; position:absolute; inset:0; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%); animation: shimmer 2s linear infinite; background-size: 200% auto; }
+      .progress-fill { height: 100%; border-radius: 999px; width: 0; transition: width 1.8s cubic-bezier(0.16,1,0.3,1); }
 
       /* Divider */
-      .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(99,102,241,0.3), transparent); }
-
-      /* Rotating ring */
-      .spin-ring {
-        position: absolute; inset: -8px; border-radius: 50%;
-        border: 2px dashed rgba(99,102,241,0.3);
-        animation: spin-slow 20s linear infinite;
-      }
+      .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(99,102,241,0.3), transparent); position: relative; }
 
       /* Cursor */
       .cursor { display: inline-block; width: 3px; height: 1.2em; background: #60a5fa; margin-left: 2px; animation: blink 1s step-end infinite; vertical-align: text-bottom; }
@@ -133,10 +171,23 @@
       ::-webkit-scrollbar-thumb { background: linear-gradient(#3b82f6, #8b5cf6); border-radius: 999px; }
 
       /* Section badge */
-      .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #818cf8; }
+      .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 999px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #818cf8; transition: all 0.3s; }
+      .badge:hover { background: rgba(99,102,241,0.18); border-color: rgba(99,102,241,0.4); }
 
       /* Tag */
       .tag { padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+
+      /* Stat counter card */
+      .stat-card { transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }
+      .stat-card:hover { transform: scale(1.08); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+      /* Social link hover */
+      .social-link { transition: all 0.3s; }
+      .social-link:hover { transform: translateY(-3px); color: white; }
+
+      /* Tilt effect on image wrapper */
+      .tilt-wrap { transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+      .tilt-wrap:hover { transform: perspective(800px) rotateY(-4deg) rotateX(2deg) scale(1.02); }
     </style>
 </head>
 <body>
@@ -211,19 +262,20 @@
                     </a>
                 </div>
             </div>
-            <div class="flex justify-center">
-                <div class="relative float">
-                    <div class="spin-ring"></div>
-                    <div class="absolute -inset-6 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
-                    <img src="./WhatsApp Imjjj.jpeg" alt="Rebecca" class="relative w-72 h-72 md:w-80 md:h-80 object-cover rounded-full glow-pulse border-2 border-blue-500/30">
+            <div class="flex justify-center reveal-scale">
+                <div class="relative float tilt-wrap">
+                    <div class="spin-ring-outer"></div>
+                    <div class="spin-ring-inner"></div>
+                    <div class="absolute -inset-8 bg-gradient-to-r from-blue-500/25 via-purple-500/25 to-pink-500/25 rounded-full blur-3xl"></div>
+                    <img src="./WhatsApp Imjjj.jpeg" alt="Rebecca" class="relative w-72 h-72 md:w-80 md:h-80 object-cover rounded-full glow-pulse border-2 border-blue-500/40">
                     <!-- Floating badges -->
-                    <div class="absolute -top-4 -right-4 glass-strong px-3 py-2 rounded-xl text-xs font-semibold border border-blue-500/20 flex items-center gap-2 shadow-xl">
+                    <div class="float-badge-1 absolute -top-4 -right-4 glass-strong px-3 py-2 rounded-xl text-xs font-semibold border border-blue-500/30 flex items-center gap-2 shadow-xl shadow-blue-500/10">
                         <span class="text-blue-400">⚛️</span> React Dev
                     </div>
-                    <div class="absolute -bottom-4 -left-4 glass-strong px-3 py-2 rounded-xl text-xs font-semibold border border-purple-500/20 flex items-center gap-2 shadow-xl">
+                    <div class="float-badge-2 absolute -bottom-4 -left-4 glass-strong px-3 py-2 rounded-xl text-xs font-semibold border border-purple-500/30 flex items-center gap-2 shadow-xl shadow-purple-500/10">
                         <span class="text-purple-400">▲</span> Next.js
                     </div>
-                    <div class="absolute top-1/2 -right-8 glass-strong px-3 py-2 rounded-xl text-xs font-semibold border border-pink-500/20 flex items-center gap-2 shadow-xl">
+                    <div class="float-badge-3 absolute top-1/2 -right-10 glass-strong px-3 py-2 rounded-xl text-xs font-semibold border border-pink-500/30 flex items-center gap-2 shadow-xl shadow-pink-500/10">
                         <span class="text-pink-400">🎨</span> UI/UX
                     </div>
                 </div>
@@ -247,17 +299,17 @@
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="reveal-left flex justify-center">
-                    <div class="relative">
+                    <div class="relative tilt-wrap">
                         <div class="absolute -inset-6 bg-gradient-to-br from-blue-500/15 via-purple-500/15 to-pink-500/15 rounded-3xl blur-2xl"></div>
                         <div class="relative glass-strong rounded-3xl p-2 border border-white/10">
                             <img src="./TWEREE.jpg" alt="Rebecca" class="w-80 h-80 object-cover rounded-2xl">
                         </div>
                         <!-- Stats overlay -->
-                        <div class="absolute -bottom-6 -right-6 glass-strong rounded-2xl p-4 border border-white/10 shadow-2xl">
+                        <div class="stat-card absolute -bottom-6 -right-6 glass-strong rounded-2xl p-4 border border-white/10 shadow-2xl">
                             <div class="text-3xl font-black text-blue-400">3+</div>
                             <div class="text-xs text-gray-400 font-medium">Projects Built</div>
                         </div>
-                        <div class="absolute -top-6 -left-6 glass-strong rounded-2xl p-4 border border-white/10 shadow-2xl">
+                        <div class="stat-card absolute -top-6 -left-6 glass-strong rounded-2xl p-4 border border-white/10 shadow-2xl">
                             <div class="text-3xl font-black text-purple-400">100%</div>
                             <div class="text-xs text-gray-400 font-medium">Dedication</div>
                         </div>
@@ -306,7 +358,7 @@
             </div>
             <div class="grid md:grid-cols-2 gap-6 mb-12">
                 <!-- Frontend -->
-                <div class="reveal glass-strong rounded-2xl p-8 skill-card border border-white/5">
+                <div class="reveal glass-strong rounded-2xl p-8 skill-card border border-white/5" data-delay="1">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
                             <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4z"/></svg>
@@ -337,7 +389,7 @@
                     </div>
                 </div>
                 <!-- Tools -->
-                <div class="reveal glass-strong rounded-2xl p-8 skill-card border border-white/5">
+                <div class="reveal glass-strong rounded-2xl p-8 skill-card border border-white/5" data-delay="2">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/30">
                             <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633z" clip-rule="evenodd"/></svg>
@@ -394,7 +446,7 @@
             </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Book Explorer -->
-                <article class="reveal project-card glass-strong rounded-2xl overflow-hidden border border-white/5 group">
+                <article class="reveal project-card glass-strong rounded-2xl overflow-hidden border border-white/5 group" data-delay="1">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1548048026-5a1a941d93d3?w=600" alt="Book Explorer" class="w-full h-48 object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -419,7 +471,7 @@
                     </div>
                 </article>
                 <!-- Movie Explorer -->
-                <article class="reveal project-card glass-strong rounded-2xl overflow-hidden border border-white/5 group">
+                <article class="reveal project-card glass-strong rounded-2xl overflow-hidden border border-white/5 group" data-delay="2">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600" alt="Movie Explorer" class="w-full h-48 object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -444,7 +496,7 @@
                     </div>
                 </article>
                 <!-- Static Ecommerce -->
-                <article class="reveal project-card glass-strong rounded-2xl overflow-hidden border border-white/5 group">
+                <article class="reveal project-card glass-strong rounded-2xl overflow-hidden border border-white/5 group" data-delay="3">
                     <div class="relative overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=600" alt="Ecommerce" class="w-full h-48 object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
@@ -575,6 +627,16 @@
       // Year
       document.getElementById('year').textContent = new Date().getFullYear();
 
+      // Particles
+      const colors = ['rgba(59,130,246,0.5)','rgba(139,92,246,0.5)','rgba(236,72,153,0.4)'];
+      for (let i = 0; i < 18; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        const size = Math.random() * 4 + 2;
+        p.style.cssText = `width:${size}px;height:${size}px;background:${colors[i%3]};left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${6+Math.random()*10}s;animation-delay:${Math.random()*6}s;`;
+        document.body.appendChild(p);
+      }
+
       // Mobile menu
       document.getElementById('nav-toggle').addEventListener('click', () => {
         document.getElementById('mobile-menu').classList.toggle('hidden');
@@ -609,20 +671,22 @@
         });
       });
 
-      // Scroll reveal
+      // Scroll reveal with stagger
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Animate progress bars
-            entry.target.querySelectorAll('.progress-fill').forEach(bar => {
-              bar.style.width = getComputedStyle(bar).getPropertyValue('--w');
-            });
+            const el = entry.target;
+            const delay = el.dataset.delay ? parseFloat(el.dataset.delay) * 100 : 0;
+            setTimeout(() => {
+              el.classList.add('visible');
+              el.querySelectorAll('.progress-fill').forEach(bar => {
+                bar.style.width = getComputedStyle(bar).getPropertyValue('--w');
+              });
+            }, delay);
           }
         });
-      }, { threshold: 0.15 });
-
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
 
       // Typed text effect
       const roles = ['Frontend Developer', 'React Specialist', 'UI/UX Enthusiast', 'Next.js Developer'];
@@ -644,8 +708,15 @@
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
         if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
-        document.getElementById('form-status').classList.remove('hidden');
-        this.reset();
+        const btn = this.querySelector('button[type=submit]');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        setTimeout(() => {
+          document.getElementById('form-status').classList.remove('hidden');
+          btn.innerHTML = 'Send Message <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>';
+          btn.disabled = false;
+          this.reset();
+        }, 800);
       });
     </script>
 </body>
